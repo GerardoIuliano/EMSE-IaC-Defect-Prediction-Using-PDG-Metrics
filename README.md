@@ -39,7 +39,7 @@
   
 2. **Build Docker Image**:
    ```bash
-   docker build -t <image-name>
+   docker build -t <image-name> .
 
 2. **Run Docker Image**:
    ```bash
