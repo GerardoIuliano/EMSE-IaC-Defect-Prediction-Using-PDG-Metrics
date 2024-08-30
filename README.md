@@ -2,10 +2,11 @@
 
 ## Overview
 
-- **Context**: Infrastructure-as-code (IaC) is a DevOps practice that facilitates the management and provisioning of infrastructure by utilizing machine-readable files known as IaC scripts. Similarly to other types of source code artifacts, these scripts are susceptible to defects that may hinder their functionality.
-- **Objective**: We conjecture that Program Dependency Graph (PDG) metrics may provide insights into the defectiveness of IaC scripts. Based on this conjecture, we propose to develop and empirically evaluate a new defect prediction model based on PDG metrics.
-- **Method**: We extracted 11 PDG metrics from 139 open-source Ansible projects and trained five machine learners to assess their capabilities in a within-project scenario, other than comparing them with a state-of-the-art defect predictor relying on structural and process IaC-oriented metrics. Finally, we assessed the performance of a combined model that mixes PDG and existing IaC-oriented metrics.
-- **Results**: The most occurring predictors are MAXPDGVERTICES, EDGESTOVERTICESRATIO, EDGESCOUNT, and VERTICESCOUNT. Program Dependence Graph metrics-based models trained using RANDOM FOREST and DECISION TREE perform statistically better than those relying on the remaining classifiers. PDG metrics-based models correctly predicted the number of bugs over 20% more than Delta and Process metrics-based models. Finally, PDG metrics can improve Delta and Process metrics' performance. However, such metrics have negligible effects on models employing ICO metrics.
+Infrastructure as Code (IaC) is a DevOps practice that facilitates the management and provisioning of infrastructure by using machine-readable files known as IaC scripts. Like other types of source code, these scripts are prone to defects that can compromise their functionality. While existing research has primarily focused on product and process metrics for predicting defects in Ansible scripts, we hypothesize that Program Dependence Graph (PDG) metrics can offer additional insights into the defectiveness of IaC scripts.
+
+This paper presents an empirical study that first examines the role of PDG metrics in isolation and then evaluates their effectiveness when combined with existing structural and process metrics. We extracted 11 PDG metrics from 137 open-source Ansible projects and trained five machine learning classifiers in a within-project scenario to assess the predictive capabilities of these metrics on their own. Furthermore, we combined PDG metrics with a state-of-the-art defect predictor that utilizes structural and process IaC-oriented metrics to determine the added value provided by the integration of these metrics.
+
+Our results show that PDG metrics-based models using Random Forest and Decision Tree classifiers perform statistically better than those relying on the remaining classifiers. In addition, the combined predictor achieved a mean Area Under the Precision-Recall Curve (AUC-PR) and Matthews Correlation Coefficient (MCC) of 90% and 86%, respectively.
 
 ## Repository Structure
 
